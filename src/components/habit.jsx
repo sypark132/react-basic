@@ -1,6 +1,17 @@
 import React, { PureComponent } from 'react';
 
 class Habit extends PureComponent {
+    //라이프사이클 메서드
+    componentDidMount() {
+        //컴포넌트가 사용자에게 보여졌을 때 호출 됨.
+        console.log(`habit: ${this.props.habit.name} mounted`)
+    }
+
+    componentWillUnmount() {
+        //컴포넌트가 지워지기 전에 호출 됨.
+        console.log(`habit: ${this.props.habit.name} will unmount`)
+    }
+
     handleIncrement = () => {
         //state 오브젝트 안에 있는 count를 증가시킨 뒤 state 업데이트 해야 함.
         //state를 업데이트 할 때에는 리액트에서 제공하는 setState 함수를 호출해야 함.

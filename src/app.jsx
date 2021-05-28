@@ -2,7 +2,6 @@ import './app.css';
 import React, { Component } from 'react';
 import Habits from './components/habits';
 import Navbar from './components/navbar';
-import HabitAddForm from './components/habitAddForm';
 
 class App extends Component {
   state = {
@@ -47,7 +46,7 @@ class App extends Component {
 
   handleDelete = (habit) => {
     console.log(`handleDelete ${habit.name}`);
-    const habits = this.state.habits.filter(item => item.id!=habit.id);
+    const habits = this.state.habits.filter(item => item.id!==habit.id);
     this.setState({habits});
   }
 
@@ -60,7 +59,7 @@ class App extends Component {
     const habits = this.state.habits.map(habit => {
       // habit.count = 0;
       // return habit;
-      if(habit.count > 0) {
+      if(habit.count > 0) { //habit.count !== 0
         return {...habit, count: 0}
       }
       return habit;
